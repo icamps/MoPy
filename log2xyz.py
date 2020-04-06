@@ -14,7 +14,6 @@ def file_lengthy(fname):
 fname_root = sys.argv[1]
 fname_mop = fname_root + ".mop"
 fname_log = fname_root + ".log"
-#fname_log = "10x0_2u_10x_opt.aux"
 fname_xyz = fname_root + ".xyz"
 fname_dat = fname_root + ".dat"
 
