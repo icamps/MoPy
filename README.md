@@ -4,12 +4,12 @@ Some script to work with MOPAC output files
 I had some needs working with MOPAC output, so I tried to fix the issues using Python.
 
 # Issue #1: See how the optimization structure is evolving.
-# Files
+>> Files
 Script: log2xyz.py
 
 Jupiter notebook: log2xyz.ipynb
 
-# Solution:
+>> Solution:
 - Add the following keywords to the MOP file: 
 AUX(6,COMP, XP, XS, XW)
 - Run as mopac fname_root.mop > fname_root.log
