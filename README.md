@@ -13,5 +13,6 @@ AUX(6,COMP, XP, XS, XW)
 - Edit the Jupiter notebook variable "fname_root" accordingly OR add the "fname_root" as an argument to the script.
 - Running the script/notebook will create a XYZ file with the structure of each optimization step. This file can be visualized using Jmol (an animation can be done)
 - A file "fname_root.dat" is created with two column: optimization_step energy, useful to analyze the energy of the system at each optimization step.
-- Note: If using AUX(5,COMP, XP, XS, XW) keyword, a file with the optimization steps will be created automatically with the name: fname_opt.aux (this file has the same structure as "fname_root.log"
+
+Note: If using AUX(5,COMP, XP, XS, XW) keyword, a file with the optimization steps will be created automatically with the name: fname_opt.aux (this file has the same structure as "fname_root.log"
 
