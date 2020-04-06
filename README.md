@@ -17,3 +17,14 @@ AUX(6,COMP, XP, XS, XW)
 
 Note: If using AUX(5,COMP, XP, XS, XW) keyword, a file with the optimization steps will be created automatically with the name: fname_opt.aux (this file has the same structure as "fname_root.log"
 
+# Issue #2: Optain the sufaces (electrostatic potential and molecular orbitals) of each time step in a DRC calculation.
+>> Files: Script: .py; Jupiter notebook: .ipynb
+
+Solution:
+- Add the keyword GRAPHF to the DRC input file. This will create a file with extension MGF with all the data for each DRC time step.
+- Run as "mopac fname_root.mop". A file "fname_root.mgf" will be created.
+- Running the script/notebook will create as many files as DRC time steps you define in your input. The putput files will be created with names "fname_root_1.mgf, fname_root_2.mgf, ..."
+
+
+Running a DRC calculation with the keyword GRAPHF.
+
