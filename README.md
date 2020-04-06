@@ -4,10 +4,7 @@ Some script to work with MOPAC output files
 I had some needs working with MOPAC output, so I tried to fix the issues using Python.
 
 # Issue #1: See how the optimization structure is evolving.
->> Files
-Script: log2xyz.py
-
-Jupiter notebook: log2xyz.ipynb
+>> Files: Script: log2xyz.py; Jupiter notebook: log2xyz.ipynb
 
 >> Solution:
 - Add the following keywords to the MOP file: 
