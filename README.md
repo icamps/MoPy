@@ -1,5 +1,5 @@
 # MoPy
-Some script to work with MOPAC output files.
+A set of scripts/Jupiter notebooks to work with MOPAC output files.
 MOPAC is a software to do semi-empirical calculation on molecular systems. Can be downloaded from openmopac.net.
 
 I had some needs working with MOPAC output, so I tried to fix the issues using Python.
