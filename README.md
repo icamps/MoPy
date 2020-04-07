@@ -5,7 +5,7 @@ MOPAC is a software to do semi-empirical calculation on molecular systems. Can b
 I had some needs working with MOPAC output, so I tried to fix the issues using Python.
 
 # Issue #1: See how the optimization structure is evolving.
->> Files: Script: [log2xyz.py] (log2xyz.py); Jupiter notebook: log2xyz.ipynb
+>> Files: Script: [log2xyz.py] (log2xyz.py/); Jupiter notebook: log2xyz.ipynb
 
 ## Solution:
 - Add the following keywords to the MOP file: 
