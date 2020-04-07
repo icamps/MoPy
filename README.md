@@ -5,9 +5,9 @@ MOPAC is a software to do semi-empirical calculation on molecular systems. Can b
 I had some needs working with MOPAC output, so I tried to fix the issues using Python.
 
 # Issue #1: See how the optimization structure is evolving.
->> Files: Script: log2xyz.py; Jupiter notebook: log2xyz.ipynb
+>> Files: Script: [log2xyz.py] (log2xyz.py); Jupiter notebook: log2xyz.ipynb
 
-Solution:
+## Solution:
 - Add the following keywords to the MOP file: 
 AUX(6,COMP, XP, XS, XW)
 - Run as "mopac fname_root.mop > fname_root.log" 
@@ -20,7 +20,7 @@ Note: If using AUX(5,COMP, XP, XS, XW) keyword, a file with the optimization ste
 # Issue #2: Optain the sufaces (electrostatic potential and molecular orbitals) of each time step in a DRC calculation.
 >> Files: Script: .py; Jupiter notebook: .ipynb
 
-Solution:
+## Solution:
 - Add the keyword GRAPHF to the DRC input file. This will create a file with extension MGF with all the data for each DRC time step.
 - Run as "mopac fname_root.mop". A file "fname_root.mgf" will be created.
 - Running the script/notebook will create as many files as DRC time steps you define in your input. The output files will be created with names "fname_root_1.mgf, fname_root_2.mgf, ..."
