@@ -14,6 +14,7 @@ def file_lengthy(fname):
 fname_root = sys.argv[1]
 fname_mop = fname_root + ".mop"
 fname_log = fname_root + ".log"
+#fname_log = "10x0_2u_10x_opt.aux"
 fname_xyz = fname_root + ".xyz"
 fname_dat = fname_root + ".dat"
 
@@ -37,18 +38,25 @@ atom_types = []
 for i in range(count_atoms):
     atom_types.append(all_lines_mop[i + 3][:2])
 
+atom_types = []
+for i in range(count_atoms):
+    atom_types.append(all_lines_mop[i + 3][:2])
+
+
 fh_xyz = open(fname_xyz,"w")
 fh_dat = open(fname_dat,"w")
 for steps in range(num_step_opt):
     fh_xyz.write(str(count_atoms))
     fh_xyz.write("\n")
     energy_kcal_mol = all_lines_log[5  + steps * (count_atoms + 3)].partition("+")[2].partition("\n")[0]
-    fh_dat.write(str(steps) + "\t" + str(float(energy_kcal_mol.replace("D", "E"))) + "\n")
-    fh_xyz.write("Profile " + str(steps + 1) + " HEAT OF FORMATION =    " + energy_kcal_mol)
+    energy_kcal_mol = float(energy_kcal_mol.replace("D", "E"))
+    energy_kJ = round(energy_kcal_mol * 4.1868, 3)
+    fh_dat.write(str(steps) + "\t" + str(energy_kcal_mol) + "\n")
+    fh_xyz.write("Profile " + str(steps + 1) + " HEAT OF FORMATION =    " + str(energy_kcal_mol) + " KCAL =    " + str(energy_kJ) + " KJ")
     fh_xyz.write("\n")
     for x in range(count_atoms):
         atom_coord = all_lines_log[8 + steps * (count_atoms + 3) + x]
         fh_xyz.write(atom_types[x] + atom_coord)
-        
+
 fh_xyz.close()
 fh_dat.close()
