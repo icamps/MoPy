@@ -9,9 +9,12 @@ DispE=$(grep "DISPERSION ENERGY       =" $filename | grep '='| awk '{printf "%12
 HBondE=$(grep "H-BOND ENERGY           =" $filename | grep '='| awk '{printf "%12.6f \n",$4}')
 NHBonds=$(grep "No. OF HYDROGEN BONDS   =" $filename | grep '='| awk '{printf "%12.6f \n",$6}')
 IonPot=$(grep "IONIZATION POTENTIAL    =" $filename | grep '='| awk '{printf "%12.6f \n",$4}')
-AlphaSOMO=$(grep "ALPHA SOMO LUMO (EV)    =" $filename | grep '='| awk '{printf "%12.6f %12.6f \n",$6,$7}')
-BetaSOMO=$(grep "BETA  SOMO LUMO (EV)    =" $filename | grep '='| awk '{printf "%12.6f %12.6f \n",$6,$7}')
-HOMOLUMO=$(grep "HOMO LUMO ENERGIES (EV) =" $filename | grep '='| awk '{printf "%12.6f %12.6f \n",$6,$7}')
+AlphaSOMO=$(grep "ALPHA SOMO LUMO (EV)    =" $filename | grep '='| awk '{printf "%12.6f \n",$6}')
+AlphaLUMO=$(grep "ALPHA SOMO LUMO (EV)    =" $filename | grep '='| awk '{printf "%12.6f \n",$7}')
+BetaSOMO=$(grep "BETA  SOMO LUMO (EV)    =" $filename | grep '='| awk '{printf "%12.6f \n",$6}')
+BetaLUMO=$(grep "BETA  SOMO LUMO (EV)    =" $filename | grep '='| awk '{printf "%12.6f \n",$7}')
+HOMO=$(grep "HOMO LUMO ENERGIES (EV) =" $filename | grep '='| awk '{printf "%12.6f \n",$6}')
+LUMO=$(grep "HOMO LUMO ENERGIES (EV) =" $filename | grep '='| awk '{printf "%12.6f \n",$7}')
 
 if [ "$DispE" = "" ];
 then
@@ -33,15 +36,31 @@ if [ "$AlphaSOMO" = "" ];
 then
    AlphaSOMO="XXXXX"
 fi
+if [ "$AlphaLUMO" = "" ];
+then
+   AlphaLUMO="XXXXX"
+fi
 if [ "$BetaSOMO" = "" ];
 then
    BetaSOMO="XXXXX"
 fi
-if [ "$HOMOLUMO" = "" ];
+if [ "$BetaLUMO" = "" ];
 then
-   HOMOLUMO="XXXXX"
+   BetaLUMO="XXXXX"
+fi
+if [ "$HOMO" = "" ];
+then
+   HOMO="XXXXX"
+fi
+if [ "$LUMO" = "" ];
+then
+   LUMO="XXXXX"
 fi
 
 
-echo $filename $TotalE $DispE $HBondE $NHBonds $IonPot $AlphaSOMO $BetaSOMO $HOMOLUMO >> $1.dat
+echo $filename, $TotalE, $DispE, $HBondE, $NHBonds, $IonPot, $AlphaSOMO, $AlphaLUMO, $BetaSOMO, $BetaLUMO, $HOMO, $LUMO >> $1.t379x24
 done
+
+echo 'Filename', 'Total Energy (eV)', 'Dispersion Energy (eV)', 'H-BOND Ebergy (eV)', 'No. HBonds', 'Ionization Potential (eV)', 'AlphaSOMO (eV)', 'AlphaLUMO (eV)', 'BetaSOMO (eV)', 'BetaLUMO (eV)', 'HOMO (eV)', 'LUMO (eV)' >> t379x24
+cat t379x24 $1.t379x24 > $1.csv
+rm -f t379x24 $1.t379x24
