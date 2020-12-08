@@ -13,3 +13,5 @@ done
 convert -limit memory 0 -limit map 0 *.jpg movie.gif
 convert -limit memory 0 -limit map 0 *.jpg movie.mpg
 
+# https://askubuntu.com/a/610945/918686
+# ffmpeg -framerate 25 -i test_%00d.jpg -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4
