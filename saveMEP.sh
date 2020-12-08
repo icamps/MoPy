@@ -15,5 +15,5 @@ convert -limit memory 0 -limit map 0 *.jpg movie.mpg
 
 # https://askubuntu.com/a/610945/918686
 # ffmpeg -framerate 25 -i test_%00d.jpg -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p output.mp4
-# convert MP$ to GIF: 
+# convert MP4 to GIF: 
 # ffmpeg -i output.mp4 -r 15 -vf scale=512:-1 -ss 00:00:03 -to 00:00:06 output.gif
