@@ -1,0 +1,4 @@
+color background white
+axes
+rotate y 45
+isosurface resolution 6 solvent map mep translucent;
