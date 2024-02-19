@@ -4,7 +4,7 @@ MOPAC is a software to do semi-empirical calculation on molecular systems. Can b
 
 I had some needs working with MOPAC output, so I tried to fix the issues using Python.
 
-Note: I am a begginer wity Python, so, if you can optimize the code, you are welcome to contribute!
+Note: I am a beginner with Python, so, if you can optimize the code, you are welcome to contribute!
 
 # Issue #1: See how the optimization structure is evolving.
 >> Files: Script: log2xyz.py; Jupiter notebook: log2xyz.ipynb
