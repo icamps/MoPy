@@ -18,6 +18,14 @@ fname_log = fname_root + ".log"
 fname_xyz = fname_root + ".xyz"
 fname_dat = fname_root + ".dat"
 
+my_file =  open(fname_mop, "r+")
+content = my_file.read()
+content = content.rstrip('\n')
+my_file.seek(0)
+
+my_file.write(content)
+my_file.truncate()
+my_file.close() 
 
 fh_mop = open(fname_mop,"r")
 all_lines_mop = fh_mop.readlines()
